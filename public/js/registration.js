@@ -1,36 +1,31 @@
 document.registrationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
-
+  console.log('OKOKOK');
   const body = {
-    username: event.target.login.value,
+    username: event.target.username.value,
     email: event.target.email.value,
     password: event.target.password.value,
   };
-  const passwordPrep = event.target.passwordPrep.value;
+  console.log(body);
+  const passwordRep = event.target.passwordRep.value;
   const password = event.target.password.value;
 
-  if (passwordPrep === password) {
-    if (password.value.length > 5) {
-      const response = await fetch('/registration', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const jsonResponse = await response.json();
-
-      if (jsonResponse. === true) {
-        alert('Успешная регистрация');
-        window.location.href = '/';
-      } else {
-        alert('Регистрация не удалась');
-      }
+  if (passwordRep === password) {
+    const response = await fetch('/registration', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const jsonResponse = await response.json();
+    if (jsonResponse.createUser === true) {
+      alert('Успешная регистрация');
+      window.location.href = '/';
     } else {
-      alert('Пароль должен содержать не менее 6 символов')
+      alert('Регистрация не удалась');
     }
   } else {
-    alert('Пароли не совпадают')
+    alert('Пароли не совпадают!');
   }
-
 });

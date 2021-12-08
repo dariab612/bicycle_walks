@@ -1,9 +1,9 @@
-const router = require('express').Router;
-// const { Op } = require('sequelize');
+const router = require('express').Router();
+const { Op } = require('sequelize');
 const bcrypt = require('bcrypt');
-// const { User } = require('../db/models');
+const { User } = require('../db/models');
 
-router.route('/registration')
+router.route('/')
 
   .get((req, res) => {
     res.render('registration');
@@ -12,6 +12,7 @@ router.route('/registration')
   .post(async (req, res) => {
     const name = req.body.username;
     const { email, password } = req.body;
+    console.log(req.body);
     let newUser;
     const checkUser = await User.findOne({
       where: {
