@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
+const logoutRouter = require('./router/logout.router')
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -36,13 +37,14 @@ app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(sessionMiddleware);
+
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-
-app.use(sessionMiddleware);
 app.use('/registration', regRouter);
+app.use('/logout', logoutRouter);
 
 app.listen(PORT, () => {
   console.log('Server has been shurshed epte', PORT);
