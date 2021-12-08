@@ -3,12 +3,14 @@ const path = require('path');
 const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
+const auth = require('./router/authentication')
 
 //dasha
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
-const sessionMiddleware = require('./middleware/session')
+const sessionMiddleware = require('./middleware/session');
+const req = require('express/lib/request');
 
 
 
@@ -44,6 +46,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/registration', regRouter);
+app.use('/authentication', auth)
 app.use('/logout', logoutRouter);
 
 app.listen(PORT, () => {
