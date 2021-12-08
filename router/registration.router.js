@@ -29,8 +29,15 @@ router.route('/')
         email,
         password: hashPassword,
       });
+      req.session.user = {
+        id: newUser.id,
+        name: newUser.name,
+        email,
+        signedUp: true,
+      };
     } else {
       res.json({ createUser: false, message: 'Такой велосипедист уже зарегистрирован' });
+
     }
     if (newUser) {
       res.json({ createUser: true, message: 'Успешная регистрация' });
