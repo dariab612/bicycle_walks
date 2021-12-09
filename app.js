@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
 const auth = require('./router/authentication')
+const changeRouter = require('./router/change.router')
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -48,6 +49,11 @@ app.get('/', (req, res) => {
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
 app.use('/logout', logoutRouter);
+app.use('/changeForm', changeRouter)
+
+app.get('/user', (req, res) => {
+  res.render('user')
+})
 
 app.listen(PORT, () => {
   console.log('Server has been shurshed epte', PORT);
