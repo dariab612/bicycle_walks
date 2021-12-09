@@ -10,6 +10,8 @@ const changeRouter = require('./router/change.router')
 
 const cardRouter = require('./router/createCard.router'); // VITYA
 
+const user_pageRouter = require('./router/user_page.router');
+
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -44,7 +46,7 @@ app.use(morgan('dev'));
 app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({extended: true})); // VITYA
+app.use(express.urlencoded({ extended: true })); // VITYA
 
 app.use(sessionMiddleware);
 
@@ -65,6 +67,7 @@ app.use('/registration', regRouter);
 app.use('/authentication', auth)
 app.use('/logout', logoutRouter);
 app.use('/changeForm', changeRouter)
+app.use('/user', user_pageRouter)
 
 app.get('/user', (req, res) => {
   res.render('user')
