@@ -25,6 +25,7 @@ if (jsonResponse.createRoute === true) {
   alert('Ошибка: такой маршрут существует');
 }
 
+
 console.log(body.coordinates);
 
 // if (body.nameRoute === )
