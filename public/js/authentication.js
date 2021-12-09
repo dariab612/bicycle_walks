@@ -2,7 +2,7 @@ document.login.addEventListener('submit', async (event) => {
   event.preventDefault();
   // console.log(event.target.login.value);
   const body = {
-    name: event.target.name.value,
+    email: event.target.email.value,
     password: event.target.password.value,
   };
 
@@ -14,7 +14,7 @@ document.login.addEventListener('submit', async (event) => {
     body: JSON.stringify(body),
   });
   const jsonResponse = await response.json();
-  if (jsonResponse.createUser === true) {
+  if (jsonResponse.authUser) {
     alert('Успешный вход!');
     window.location.href = '/';
   } else {
