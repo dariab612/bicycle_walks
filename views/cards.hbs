@@ -1,13 +1,40 @@
 {{!-- <div>
-{{#each map}} --}}
+{{#each allCards}}
   <div class="cardbody">
     <div> Здесь будет карта</div>
     <h5>{{this.name}}</h5>
-    <p>{{this.title}}</p>
+    <p>{{this.description}}</p>
+    <p>{{this.coordinates}}</p>
     {{#if signedUp}}
     <button>Добавить</button>
   {{else}}
   <a href="/registration">Зарегистрированым пользователям доступна возможность добавления карточек</a>
   {{/if}}
-{{!-- {{/each }}
+{{/each }}
 </div> --}}
+
+    {{#if signedUp}}
+<div>
+  {{#each allCards}}
+  <div class="cardbody">
+      <div> Здесь будет карта</div>
+      <h5>{{this.name}}</h5>
+      <p>{{this.description}}</p>
+      <p>{{this.coordinates}}</p>
+      <button class="addCard" data-href="/cards/add/{{ id }}" >Добавить</button>
+  </div>
+    {{/each }}
+</div>
+  {{else}}
+<div>
+  {{#each allCards}}
+  <div class="cardbody">
+    <div> Здесь будет карта</div>
+    <h5>{{this.name}}</h5>
+    <p>{{this.description}}</p>
+    <p>{{this.coordinates}}</p>
+  </div>
+  <a href="/registration">Зарегистрированым пользователям доступна возможность добавления карточек</a>
+{{/each }}
+</div>
+{{/if}}

@@ -1,4 +1,4 @@
-document.login.addEventListener('submit', async (event) => {
+document.login?.addEventListener('submit', async (event) => {
   event.preventDefault();
   // console.log(event.target.login.value);
   const body = {
