@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
 const auth = require('./router/authentication')
-
+const map = require('./router/map')
 //dasha
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -48,6 +48,7 @@ app.get('/', (req, res) => {
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
 app.use('/logout', logoutRouter);
+app.use('/', map);
 
 app.listen(PORT, () => {
   console.log('Server has been shurshed epte', PORT);

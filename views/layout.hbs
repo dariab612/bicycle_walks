@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="/js/registration.js"></script>
   <script defer src="/js/client.js"></script>
+  <script defer src="/js/map-api.js"></script>
+  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=faa89553-c4e8-4e47-92a5-4cdd9b5212c8&lang=ru_RU" type="text/javascript">
+    </script>
   <title>Bicycle Walks</title>
 </head>
 
@@ -25,6 +28,13 @@
         {{/if}}
       </div>
     </nav>
+    <div> 
+      <form name="map_route" action="/" method="POST">
+  <label id="a-id">А:<input id="a-id" name="a" type="text"></label>
+  <label id="b-id">Б:<input id="b-id" name="b" type="text"></label>
+  <button type="submit">Задать</button>
+</form>
+    <div id="map" style="width: 600px; height: 400px"></div></div>
   </header>
   {{{ body }}}
 </body>
