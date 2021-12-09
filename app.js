@@ -3,7 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
-const auth = require('./router/authentication')
+const auth = require('./router/authentication.router')
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -44,6 +44,9 @@ app.use(sessionMiddleware);
 app.get('/', (req, res) => {
   res.render('index');
 });
+app.get('/cards', (req, res) => {
+  res.render('cards');
+})
 
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
