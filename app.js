@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
 const auth = require('./router/authentication')
+const cardRouter = require('./router/createCard.router'); // VITYA
+
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -38,12 +40,16 @@ app.use(morgan('dev'));
 app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({extended: true})); // VITYA
 
 app.use(sessionMiddleware);
 
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+app.use('/createRoute', cardRouter); //VITYA
+
 
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
