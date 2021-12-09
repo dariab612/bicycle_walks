@@ -7,7 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="/js/registration.js"></script>
   <script defer src="/js/client.js"></script>
+
   <script defer src="/js/changeRoute.js"></script>
+
+  <script defer src="/js/createRoute.js"></script>
+  <script defer src="/js/authentication.js"></script>
+
   <title>Bicycle Walks</title>
 </head>
 
@@ -16,13 +21,14 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         {{#if signedUp}}
-        <a class="nav-item nav-link" href="/" style="font-size: 20px;color: black;margin-right:15px;">
+        <a class="nav-item nav-link" href="/user" style="font-size: 20px;color: black;margin-right:15px;">
           {{login}} </a>
-        <a class="nav-item nav-link" href="/newParty">Посмотреть маршруты</a>
+        <a class="nav-item nav-link" href="/cards">Посмотреть маршруты</a>
         <a class="nav-item nav-link" href="/logout">Выйти</a>
         {{else}}
         <a class="nav-item nav-link" href="/registration">Регистрация</a>
         <a class="nav-item nav-link" href="/authentication">Авторизация</a>
+        <a class="nav-item nav-link" href="/cards">Посмотреть маршруты</a>
         {{/if}}
       </div>
     </nav>

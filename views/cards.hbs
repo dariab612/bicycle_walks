@@ -1,0 +1,13 @@
+{{!-- <div>
+{{#each map}} --}}
+  <div class="cardbody">
+    <div> Здесь будет карта</div>
+    <h5>{{this.name}}</h5>
+    <p>{{this.title}}</p>
+    {{#if signedUp}}
+    <button>Добавить</button>
+  {{else}}
+  <a href="/registration">Зарегистрированым пользователям доступна возможность добавления карточек</a>
+  {{/if}}
+{{!-- {{/each }}
+</div> --}}
