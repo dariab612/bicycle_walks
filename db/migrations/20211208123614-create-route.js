@@ -15,7 +15,11 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      coordinates: {
+      coordinates_1: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      coordinates_2: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
