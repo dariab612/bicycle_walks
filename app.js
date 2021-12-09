@@ -47,6 +47,9 @@ app.get('/', (req, res) => {
 app.get('/cards', (req, res) => {
   res.render('cards');
 })
+app.get('/user', (req, res) => {
+  res.render('user_page');
+})
 
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
