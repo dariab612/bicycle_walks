@@ -1,42 +1,38 @@
-{{!-- <div>
-{{#each allCards}}
-  <div class="cardbody">
-    <div> Здесь будет карта</div>
-    <h5>{{this.name}}</h5>
-    <p>{{this.description}}</p>
-    <p>{{this.coordinates}}</p>
-    {{#if signedUp}}
-    <button>Добавить</button>
-  {{else}}
-  <a href="/registration">Зарегистрированым пользователям доступна возможность добавления карточек</a>
-  {{/if}}
-{{/each }}
-</div> --}}
 
     {{#if signedUp}}
-<div>
+<div class="container">
   {{#each allCards}}
+  <div class="formm size">
   <div class="cardbody">
-      <div id="map" style="width: 600px; height: 400px"></div></div>
-      <h5>{{this.name}}</h5>
-      <p>{{this.description}}</p>
+      <div id="map"></div></div>
+      <h5 class="cardText" > {{this.name}}</h5>
+      <div class="papa">
+      <p>{{description}}</p>
       <p>Начало маршрута: {{this.coordinates_1}}</p>
-      <p>Начало маршрута: {{this.coordinates_2}}</p>
-      <button class="addCard" data-href="/cards/add/{{ id }}">Добавить</button>
+      <p>Конец маршрута: {{this.coordinates_2}}</p>
+      </div>
+      <div class="cardBtn2" >
+      <button class="addCard btns first" data-href="/cards/add/{{ id }}">Добавить</button>
+      </div>
   </div>
     {{/each }}
+  </div>
 </div>
   {{else}}
-<div>
+
+<div class="container" >
   {{#each allCards}}
+  <div class="formm size">
   <div class="cardbody">
-    <div id="map" style="width: 600px; height: 400px"></div></div>
+    <div id="map"></div></div>
     <h5>{{this.name}}</h5>
-    <p>{{this.description}}</p>
-    <p>Начало маршрута: {{this.coordinates_1}}</p>
-    <p>Начало маршрута: {{this.coordinates_2}}</p>
+    <div class="papa">
+      <p>{{description}}</p>
+      <p>Начало маршрута: {{this.coordinates_1}}</p>
+      <p>Конец маршрута: {{this.coordinates_2}}</p>
+      </div>
+  <a href="/registration"><b></b> Только зарегистрированым пользователям доступна возможность добавления карточек</a>
   </div>
-  <a href="/registration">Зарегистрированым пользователям доступна возможность добавления карточек</a>
 {{/each }}
 </div>
 {{/if}}

@@ -4,13 +4,23 @@ const { Route } = require('../db/models');
 
 
 router.route('/:id')
-  .get((req, res) => {
-    res.render('changeForm');
+  .get(async(req, res) => {
+    const id = req.params.id;
+
+    const route = await Route.findOne(
+      {
+        where:{
+          id:id
+        }
+      }
+    )
+
+    res.render('changeForm', {route});
   })
   .put(async (req, res) => {
 
     const id = req.params.id;
-
+    console.log(id);
     const name = req.body.routeName;
     const desc = req.body.routeDesc;
     const cord1 = req.body.routeCord1;
