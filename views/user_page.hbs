@@ -1,15 +1,14 @@
 <div>
-  <a href="/createCard">
+  <a href="/createRoute">
     <button>Создать маршрут</button>
   </a>
 </div>
-
 <div>
-{{#each map}}
+  {{#each route}}
   <div class="cardbody">
-    <div> Здесь будет карта</div>
-    <h5>{{this.name}}</h5>
-    <p>{{this.title}}</p>
+    <div>Здесь будет карта</div>
+    <h5>{{name}}</h5>
+    <p>{{description}}</p>
     <button id="deleteButton" type="submit">Удалить маршрут</button>
     <a href="/changeForm"><button id="changeButton" type="submit">Изменить маршрут</button></a>
 {{/each }}

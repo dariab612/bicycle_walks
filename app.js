@@ -6,11 +6,16 @@ const logoutRouter = require('./router/logout.router')
 
 const auth = require('./router/authentication.router')
 
+const map = require('./router/map')
+
+
 const changeRouter = require('./router/change.router')
 
 const cardRouter = require('./router/createCard.router'); // VITYA
 
 const allCards = require('./router/cards.router')
+
+const user_pageRouter = require('./router/user_page.router');
 
 
 //dasha
@@ -46,7 +51,7 @@ app.use(morgan('dev'));
 app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({extended: true})); // VITYA
+app.use(express.urlencoded({ extended: true })); // VITYA
 
 app.use(sessionMiddleware);
 
@@ -64,7 +69,10 @@ app.use('/cards', allCards)
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
 app.use('/logout', logoutRouter);
+
+app.use('/', map);
 app.use('/changeForm', changeRouter)
+app.use('/user', user_pageRouter)
 
 app.listen(PORT, () => {
   console.log('Server has been shurshed epte', PORT);

@@ -5,9 +5,10 @@ document.createRoute?.addEventListener('submit',async (event) => { // async
   const body = {
     nameRoute: event.target.nameRoute.value,
     description: event.target.description.value,
-    coordinates: event.target.coordinates.value,
+    coordinates_1: event.target.coordinates_1.value,
+    coordinates_2: event.target.coordinates_2.value,
   };
-
+console.log(body);
   const response = await fetch('/createRoute', {
     method: 'POST',
     headers: {
@@ -26,7 +27,7 @@ if (jsonResponse.createRoute === true) {
 }
 
 
-console.log(body.coordinates);
+// console.log(body.coordinates);
 
 // if (body.nameRoute === )
 });
