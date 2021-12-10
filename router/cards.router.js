@@ -28,7 +28,8 @@ router.post('/add/:id', async (req, res) => {
   const newCard = await Route.create({
     name: cardAdd.name,
     description: cardAdd.description,
-    coordinates: cardAdd.coordinates,
+    coordinates_1: cardAdd.coordinates_1,
+    coordinates_2: cardAdd.coordinates_2,
     userID: userId,
   });
   if (newCard) {

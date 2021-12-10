@@ -17,11 +17,12 @@
 <div>
   {{#each allCards}}
   <div class="cardbody">
-      <div> Здесь будет карта</div>
+      <div id="map" style="width: 600px; height: 400px"></div></div>
       <h5>{{this.name}}</h5>
       <p>{{this.description}}</p>
-      <p>{{this.coordinates}}</p>
-      <button class="addCard" data-href="/cards/add/{{ id }}" >Добавить</button>
+      <p>Начало маршрута: {{this.coordinates_1}}</p>
+      <p>Начало маршрута: {{this.coordinates_2}}</p>
+      <button class="addCard" data-href="/cards/add/{{ id }}">Добавить</button>
   </div>
     {{/each }}
 </div>
@@ -29,10 +30,11 @@
 <div>
   {{#each allCards}}
   <div class="cardbody">
-    <div> Здесь будет карта</div>
+    <div id="map" style="width: 600px; height: 400px"></div></div>
     <h5>{{this.name}}</h5>
     <p>{{this.description}}</p>
-    <p>{{this.coordinates}}</p>
+    <p>Начало маршрута: {{this.coordinates_1}}</p>
+    <p>Начало маршрута: {{this.coordinates_2}}</p>
   </div>
   <a href="/registration">Зарегистрированым пользователям доступна возможность добавления карточек</a>
 {{/each }}

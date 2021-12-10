@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/style.css">
   <script defer src="/js/registration.js"></script>
   <script defer src="/js/client.js"></script>
   <script defer src="/js/map-api.js"></script>
@@ -22,27 +23,35 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <nav>
+      <div>
+        <div class="logo1">
+            <a href="/">
+            <img class="logo1" src="/img/ЛОГО.png" width="100"/>
+            </a>
+          </div>
         {{#if signedUp}}
-        <a class="nav-item nav-link" href="/user" style="font-size: 20px;color: black;margin-right:15px;">
+          <div class="nav">
+            <a href="/cards"><button class="btn first" type="button">Посмотреть маршруты</button></a>
+        <a href="/user">
           {{login}} </a>
-        <a class="nav-item nav-link" href="/cards">Посмотреть маршруты</a>
-        <a class="nav-item nav-link" href="/logout">Выйти</a>
+        <a href="/logout"><button class="btn first" type="button">Выйти</button></a>
+          </div>
         {{else}}
-        <a class="nav-item nav-link" href="/registration">Регистрация</a>
-        <a class="nav-item nav-link" href="/authentication">Авторизация</a>
-        <a class="nav-item nav-link" href="/cards">Посмотреть маршруты</a>
+        <div class="nav">
+        <a href="/cards"> <button class="btn first" type="button" > Посмотреть маршруты</button></a>
+          <a href="/registration"><button class="btn first" type="button">Регистрация</button></a>
+        <a href="/authentication"><button class="btn first" type="button" >Авторизация</button></a>
+        </div>
         {{/if}}
       </div>
     </nav>
     <div> 
-      <form name="map_route" action="/" method="POST">
+      {{!-- <form name="map_route" action="/" method="POST">
   <label id="a-id">А:<input id="a-id" name="a" type="text"></label>
   <label id="b-id">Б:<input id="b-id" name="b" type="text"></label>
   <button type="submit">Задать</button>
-</form>
-    <div id="map" style="width: 600px; height: 400px"></div></div>
+</form> --}}
   </header>
   {{{ body }}}
 </body>
