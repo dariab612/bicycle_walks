@@ -26,7 +26,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    coordinates: {
+    coordinates_1: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    coordinates_2: {
       type: DataTypes.TEXT,
       allowNull: false,
     },

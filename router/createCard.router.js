@@ -12,7 +12,8 @@ router.route('/')
 .post(async (req, res) => {
   const name = req.body.nameRoute;
   const description = req.body.description;
-  const coordinates = req.body.coordinates;
+  const coordinates_1 = req.body.coordinates_1;
+  const coordinates_2 = req.body.coordinates_2;
   const userID = req.session.user.id;
   // console.log(req.body);
   // console.log(req.session.user.id);
@@ -28,7 +29,8 @@ if (!checkRoute) {
   newRoute = Route.create({
     name,
     description,
-    coordinates, 
+    coordinates_1, 
+    coordinates_2, 
     userID,
   });
 } else {
