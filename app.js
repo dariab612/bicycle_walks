@@ -6,12 +6,14 @@ const logoutRouter = require('./router/logout.router')
 
 const auth = require('./router/authentication')
 
+const map = require('./router/map')
+
+
 const changeRouter = require('./router/change.router')
 
 const cardRouter = require('./router/createCard.router'); // VITYA
 
 const user_pageRouter = require('./router/user_page.router');
-
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -66,12 +68,12 @@ app.use('/createRoute', cardRouter); //VITYA
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
 app.use('/logout', logoutRouter);
+
+app.use('/', map);
 app.use('/changeForm', changeRouter)
 app.use('/user', user_pageRouter)
 
-app.get('/user', (req, res) => {
-  res.render('user')
-})
+
 
 app.listen(PORT, () => {
   console.log('Server has been shurshed epte', PORT);
