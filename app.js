@@ -3,19 +3,15 @@ const path = require('path');
 const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
-
 const auth = require('./router/authentication.router')
-
 const map = require('./router/map')
-
-
 const changeRouter = require('./router/change.router')
 
 const cardRouter = require('./router/createCard.router'); // VITYA
 const deleteRouter = require('./router/delete.router');
 const allCards = require('./router/cards.router')
-
 const user_pageRouter = require('./router/user_page.router');
+const addRouter = require('./router/addRoute.router')
 
 
 //dasha
@@ -64,7 +60,8 @@ app.get('/user_page', (req, res) => {
 });
 
 
-app.use('/createRoute', cardRouter); //VITYA
+app.use('/createRoute', cardRouter); //
+app.use('/addrouter', addRouter)
 app.use('/user', deleteRouter);
 app.use('/cards', allCards)
 
