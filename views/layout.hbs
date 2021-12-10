@@ -6,9 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style/style.css">
+
   <script src="https://api-maps.yandex.ru/2.1/?apikey=faa89553-c4e8-4e47-92a5-4cdd9b5212c8&lang=ru_RU"
     type="text/javascript">
     </script>
+
+  <link rel="stylesheet" href="/style/regStyle.css">
+  <link rel="stylesheet" href="/style/authStyle.css">
+
   <script defer src="/js/registration.js"></script>
   <script defer src="/js/map-api.js"></script>
   <script defer src="/js/changeRoute.js"></script>
@@ -22,6 +27,7 @@
 <body>
   <header>
     <nav>
+
       <div>
         <div class="logo1">
           <a href="/">
@@ -40,6 +46,19 @@
           <a href="/cards"> <button class="btn first" type="button"> Посмотреть маршруты</button></a>
           <a href="/registration"><button class="btn first" type="button">Регистрация</button></a>
           <a href="/authentication"><button class="btn first" type="button">Авторизация</button></a>
+
+        {{#if signedUp}}
+          <div class="nav">
+            <a href="/cards"><button class="butn first" type="button">Посмотреть маршруты</button></a>
+        <a href="/user" ><button class="but firstt" type="button">{{login}} </button></a>
+        <a href="/logout"><button class="butn first" type="button">Выйти</button></a>
+          </div>
+        {{else}}
+        <div class="nav">
+        <a href="/cards"> <button class="butn first" type="button" > Посмотреть маршруты</button></a>
+          <a href="/registration"><button class="butn first" type="button">Регистрация</button></a>
+        <a href="/authentication"><button class="butn first" type="button" >Авторизация</button></a>
+
         </div>
         {{/if}}
       </div>

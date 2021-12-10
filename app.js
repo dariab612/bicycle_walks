@@ -55,6 +55,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/user_page', (req, res) => {
+  res.render('user_page');
+});
+
 
 app.use('/createRoute', cardRouter); //
 app.use('/addrouter', addRouter)
