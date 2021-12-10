@@ -3,35 +3,39 @@ const { Route } = require('../db/models');
 
 
 
-router.route('/')
+router.route('/:id')
   .get((req, res) => {
     res.render('changeForm');
   })
   .put(async (req, res) => {
 
-    const routeId = req.params.id;
+    const id = req.params.id;
 
     const name = req.body.routeName;
     const desc = req.body.routeDesc;
-    const cord = req.body.routeCord;
+    const cord1 = req.body.routeCord1;
+    const cord2 = req.body.routeCord2;
+
+    let route;
 
     try {
-      await Route.update(
+      route = await Route.update(
         {
           name,
-          desc,
-          cord
+          description: desc,
+          coordinates_1: cord1,
+          coordinates_2: cord2
         },
         {
           where: {
-            id: routeId
+            id: id
           }
         }
       )
-      res.json({ message: 'All is OK', changeRoute: true });
+      res.json({ message: 'All is OK', changeRoute: true, route });
     }
     catch {
-      res.json({ message: 'Route edition failed', changeRoute: false });
+      res.json({ message: 'Route edition failed', changeRoute: false, route });
     }
 
 
