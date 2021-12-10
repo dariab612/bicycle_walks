@@ -8,7 +8,7 @@ router.delete('/delete/:id', async (req, res, next) => {
   await Route.destroy({ where: { id: req.params.id } });
   // return res.json({deleted: true});
   // res.send('есть запрос на удаление');
-  res.end();
+  res.end();;
 });
 
 module.exports = router;
