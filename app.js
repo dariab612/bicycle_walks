@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const regRouter = require('./router/registration.router');
 const logoutRouter = require('./router/logout.router')
 
-const auth = require('./router/authentication')
+const auth = require('./router/authentication.router')
 
 const map = require('./router/map')
 
@@ -13,7 +13,10 @@ const changeRouter = require('./router/change.router')
 
 const cardRouter = require('./router/createCard.router'); // VITYA
 
+const allCards = require('./router/cards.router')
+
 const user_pageRouter = require('./router/user_page.router');
+
 
 //dasha
 const cookieParser = require('cookie-parser');
@@ -55,15 +58,13 @@ app.use(sessionMiddleware);
 app.get('/', (req, res) => {
   res.render('index');
 });
-app.get('/cards', (req, res) => {
-  res.render('cards');
-})
 app.get('/user', (req, res) => {
   res.render('user_page');
 })
 
 app.use('/createRoute', cardRouter); //VITYA
 
+app.use('/cards', allCards)
 
 app.use('/registration', regRouter);
 app.use('/authentication', auth)
@@ -72,8 +73,6 @@ app.use('/logout', logoutRouter);
 app.use('/', map);
 app.use('/changeForm', changeRouter)
 app.use('/user', user_pageRouter)
-
-
 
 app.listen(PORT, () => {
   console.log('Server has been shurshed epte', PORT);
