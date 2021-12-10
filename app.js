@@ -58,9 +58,7 @@ app.use(sessionMiddleware);
 app.get('/', (req, res) => {
   res.render('index');
 });
-app.get('/user', (req, res) => {
-  res.render('user_page');
-})
+
 
 app.use('/createRoute', cardRouter); //VITYA
 

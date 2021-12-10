@@ -1,12 +1,17 @@
 const router = require('express').Router();
 const { Route } = require('../db/models');
+
 router.get('/', async (req, res) => {
-  const id = req.session.id
+  console.log(123);
+  const id = req.session.user.id
   const route = await Route.findAll({
     where: {
-      userId: id
+      userID: id
     }
+
   });
-  res.render('user_page', route);
+  console.log(route);
+  res.render('user_page', { route });
 })
+
 module.exports = router;
