@@ -12,7 +12,7 @@ const map = require('./router/map')
 const changeRouter = require('./router/change.router')
 
 const cardRouter = require('./router/createCard.router'); // VITYA
-
+const deleteRouter = require('./router/delete.router');
 const allCards = require('./router/cards.router')
 
 const user_pageRouter = require('./router/user_page.router');
@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/createRoute', cardRouter); //VITYA
-
+app.use('/user', deleteRouter);
 app.use('/cards', allCards)
 
 app.use('/registration', regRouter);
