@@ -6,11 +6,11 @@
 <div>
   {{#each route}}
   <div class="cardbody">
-    <div>Здесь будет карта</div>
+    <div id="map" style="width: 600px; height: 400px; ">Здесь будет карта</div>
     <h5>{{name}}</h5>
     <p>{{description}}</p>
     <button id="deleteButton" type="submit" name="{{this.id}}">Удалить маршрут</button>
     {{!-- <a href="/changeForm"> --}}
-    <button id="changeButton" type="submit">Изменить маршрут</button></a>
+      <button id="changeButton" type="submit">Изменить маршрут</button></a>
   </div>
   {{/each }}

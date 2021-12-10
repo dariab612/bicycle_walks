@@ -6,14 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style/style.css">
-  <script defer src="/js/registration.js"></script>
-  {{!-- <script defer src="/js/client.js"></script> --}}
-  <script defer src="/js/map-api.js"></script>
-  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=faa89553-c4e8-4e47-92a5-4cdd9b5212c8&lang=ru_RU" type="text/javascript">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=faa89553-c4e8-4e47-92a5-4cdd9b5212c8&lang=ru_RU"
+    type="text/javascript">
     </script>
-
+  <script defer src="/js/registration.js"></script>
+  <script defer src="/js/map-api.js"></script>
   <script defer src="/js/changeRoute.js"></script>
-
   <script defer src="/js/createRoute.js"></script>
   <script defer src="/js/authentication.js"></script>
   <script defer src="/js/addCard.js"></script>
@@ -26,32 +24,32 @@
     <nav>
       <div>
         <div class="logo1">
-            <a href="/">
-            <img class="logo1" src="/img/ЛОГО.png" width="100"/>
-            </a>
-          </div>
+          <a href="/">
+            <img class="logo1" src="/img/ЛОГО.png" width="100" />
+          </a>
+        </div>
         {{#if signedUp}}
-          <div class="nav">
-            <a href="/cards"><button class="btn first" type="button">Посмотреть маршруты</button></a>
-        <a href="/user">
-          {{login}} </a>
-        <a href="/logout"><button class="btn first" type="button">Выйти</button></a>
-          </div>
+        <div class="nav">
+          <a href="/cards"><button class="btn first" type="button">Посмотреть маршруты</button></a>
+          <a href="/user">
+            {{login}} </a>
+          <a href="/logout"><button class="btn first" type="button">Выйти</button></a>
+        </div>
         {{else}}
         <div class="nav">
-        <a href="/cards"> <button class="btn first" type="button" > Посмотреть маршруты</button></a>
+          <a href="/cards"> <button class="btn first" type="button"> Посмотреть маршруты</button></a>
           <a href="/registration"><button class="btn first" type="button">Регистрация</button></a>
-        <a href="/authentication"><button class="btn first" type="button" >Авторизация</button></a>
+          <a href="/authentication"><button class="btn first" type="button">Авторизация</button></a>
         </div>
         {{/if}}
       </div>
     </nav>
-    <div> 
+    <div>
       {{!-- <form name="map_route" action="/" method="POST">
-  <label id="a-id">А:<input id="a-id" name="a" type="text"></label>
-  <label id="b-id">Б:<input id="b-id" name="b" type="text"></label>
-  <button type="submit">Задать</button>
-</form> --}}
+        <label id="a-id">А:<input id="a-id" name="a" type="text"></label>
+        <label id="b-id">Б:<input id="b-id" name="b" type="text"></label>
+        <button type="submit">Задать</button>
+      </form> --}}
   </header>
   {{{ body }}}
 </body>
