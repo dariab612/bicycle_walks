@@ -16,9 +16,14 @@ document.map_route.addEventListener('submit', async (event) => {
   const jsonResponse = await response.json();
   console.log(jsonResponse);
 
-  ymaps.ready(init(body.a, body.b));
+  const mapEl = document.getElementById('map').firstElementChild
 
-
+  if (mapEl) {
+    mapEl.remove()
+    ymaps.ready(init(body.a, body.b))
+  }
+  else { ymaps.ready(init(body.a, body.b)) }
+  console.log(mapEl);
 })
 
 function init(a, b) {
@@ -93,7 +98,7 @@ function init(a, b) {
 
 
 // let multiRoute = new ymaps.multiRouter.MultiRoute({
-//   // Точки маршрута. Точки могут быть заданы как координатами, так и адресом. 
+//   // Точки маршрута. Точки могут быть заданы как координатами, так и адресом.
 //   referencePoints: [
 //     'Москва, метро Смоленская',
 //     'Москва, метро Арбатская',
