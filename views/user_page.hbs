@@ -1,0 +1,24 @@
+<div>
+  <a href="/createRoute">
+    <button class="but firstt" >Создать маршрут</button>
+  </a>
+</div>
+<div  class="container">
+  {{#each route}}
+
+  <div>
+    <div class="cardbody formm size">
+      <div id="map" style="width: 600px; height: 400px; ">Здесь будет карта</div>
+      <h5 class="cardText" > {{name}}</h5>
+      <div class="papa">
+      <p>{{description}}</p>
+      <p>Начало маршрута: {{this.coordinates_1}}</p>
+      <p>Конец маршрута: {{this.coordinates_2}}</p>
+      </div>
+      <div class="cardBtn" >
+        <button class="btns first" id="deleteButton" type="submit">Удалить маршрут</button>
+        <a href="/changeForm/{{this.id}}"><button class="btns first" id="changeButton" type="submit">Изменить маршрут</button></a>
+        </div>
+    </div>
+  </div>
+  {{/each }}

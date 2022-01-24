@@ -1,0 +1,38 @@
+
+    {{#if signedUp}}
+<div class="container">
+  {{#each allCards}}
+  <div class="formm size">
+  <div class="cardbody">
+      <div id="map"></div></div>
+      <h5 class="cardText" > {{this.name}}</h5>
+      <div class="papa">
+      <p>{{description}}</p>
+      <p>Начало маршрута: {{this.coordinates_1}}</p>
+      <p>Конец маршрута: {{this.coordinates_2}}</p>
+      </div>
+      <div class="cardBtn2" >
+      <button class="addCard btns first" data-href="/cards/add/{{ id }}">Добавить</button>
+      </div>
+  </div>
+    {{/each }}
+  </div>
+</div>
+  {{else}}
+
+<div class="container" >
+  {{#each allCards}}
+  <div class="formm size">
+  <div class="cardbody">
+    <div id="map"></div></div>
+    <h5>{{this.name}}</h5>
+    <div class="papa">
+      <p>{{description}}</p>
+      <p>Начало маршрута: {{this.coordinates_1}}</p>
+      <p>Конец маршрута: {{this.coordinates_2}}</p>
+      </div>
+  <a href="/registration"><b></b> Только зарегистрированым пользователям доступна возможность добавления карточек</a>
+  </div>
+{{/each }}
+</div>
+{{/if}}

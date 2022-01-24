@@ -1,0 +1,11 @@
+<form class="form" name="changeForm" action="/changeForm/{{id}}" method="PUT">
+  <label for="routeName">Имя<input class="input" id="routeName" name="routeName" type="text" value="{{route.name}}"
+      placeholder="{{route.name}}"></label>
+  <label for="routeDesc">Описание<input class="input" id="routeDesc" name="routeDesc" type="text" value="{{route.description}}"
+      placeholder="{{route.description}}"></label>
+  <label for="routeCord1">Кординаты A<input class="input" id="routeCord1" name="routeCord1" type="text" value="{{route.coordinates_1}}"
+      placeholder="{{route.cordinates_1}}"></label>
+  <label for="routeCord2">Кординаты B<input class="input" id="routeCord2" name="routeCord2" type="text" value="{{route.coordinates_2}}"
+      placeholder="{{route.cordinates_2}}"></label>
+  <button class="btn first" type="submit">Добавить изменения</button>
+</form>
